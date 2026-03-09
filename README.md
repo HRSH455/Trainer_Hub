@@ -21,21 +21,6 @@ A full-stack training management system with role-based access for managers, coo
 ```
 Trainer_Hub-main/
 ├── angularapp/              # Angular frontend application
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/          # UI components for different roles and features
-│   │   │   │   ├── login/           # User authentication
-│   │   │   │   ├── home-page/       # Home page
-│   │   │   │   ├── navbar/          # Navigation component
-│   │   │   │   ├── manager-*/       # Manager-related components
-
-
-
-## Project Structure
-
-```
-Trainer_Hub-main/
-├── angularapp/
 │   ├── src/app/
 │   │   ├── components/          # UI components (login, home, manager, coordinator, trainer views)
 │   │   ├── guards/              # Auth guards
@@ -248,4 +233,5 @@ cd springapp && ./mvnw test
 - **Port Already in Use**: Change port in `package.json` (frontend) or `application.properties` (backend)
 - **CORS Errors**: Verify backend CORS configuration
 - **Authentication Issues**: Clear browser local storage and verify JWT token config
+
 
