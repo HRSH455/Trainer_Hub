@@ -28,6 +28,9 @@ Trainer_Hub-main/
 │   │   │   │   ├── home-page/       # Home page
 │   │   │   │   ├── navbar/          # Navigation component
 │   │   │   │   ├── manager-*/       # Manager-related components
+
+
+
 ## Project Structure
 
 ```
@@ -60,9 +63,11 @@ Trainer_Hub-main/
     │   └── logback-spring.xml
     └── pom.xml
 ```
+
 ```bash
 cd angularapp
 ```
+
 
 2. Install dependencies:
 ```bash
@@ -243,3 +248,4 @@ cd springapp && ./mvnw test
 - **Port Already in Use**: Change port in `package.json` (frontend) or `application.properties` (backend)
 - **CORS Errors**: Verify backend CORS configuration
 - **Authentication Issues**: Clear browser local storage and verify JWT token config
+
