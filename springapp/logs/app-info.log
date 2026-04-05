@@ -37,3 +37,22 @@
 2026-04-05 17:01:41 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 21332 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
 2026-04-05 17:01:41 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
 2026-04-05 17:01:48 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 6.953 seconds (process running for 7.649)
+2026-04-05 17:02:13 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 17:02:13 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 17:02:18 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 5.297 seconds (process running for 5.776)
+2026-04-05 17:02:35 INFO  c.e.s.controller.AuthController - Received registration request for user: bommiharsha7@gmail.com
+2026-04-05 17:02:35 INFO  c.e.s.controller.AuthController - User registered successfully: bommiharsha7@gmail.com
+2026-04-05 17:02:35 INFO  c.e.s.controller.AuthController - User details: ID=2, Username=harsha, Email=bommiharsha7@gmail.com, Mobile=1234567890
+2026-04-05 17:02:45 INFO  c.e.s.controller.AuthController - Login attempt for user: bommiharsha7@gmail.com
+2026-04-05 17:02:54 INFO  c.e.s.controller.AuthController - Login attempt for user: bommiharsha7@gmail.com
+2026-04-05 17:04:08 INFO  c.e.s.controller.AuthController - Received registration request for user: bommiharsha7@gmail.com
+2026-04-05 17:04:08 INFO  c.e.s.controller.AuthController - User registered successfully: bommiharsha7@gmail.com
+2026-04-05 17:04:08 INFO  c.e.s.controller.AuthController - User details: ID=3, Username=harsha, Email=bommiharsha7@gmail.com, Mobile=1234567890
+2026-04-05 17:04:20 INFO  c.e.s.controller.AuthController - Login attempt for user: bommiharsha7@gmail.com
+2026-04-05 17:14:04 INFO  c.e.s.controller.AuthController - Received registration request for user: raj@gmail.com
+2026-04-05 17:14:05 INFO  c.e.s.controller.AuthController - User registered successfully: raj@gmail.com
+2026-04-05 17:14:05 INFO  c.e.s.controller.AuthController - User details: ID=4, Username=raj, Email=raj@gmail.com, Mobile=0987654321
+2026-04-05 17:14:21 INFO  c.e.s.controller.AuthController - Login attempt for user: raj@gmail.com
+2026-04-05 17:14:21 INFO  c.examly.springapp.config.JwtUtils - token generated
+2026-04-05 17:14:21 INFO  c.e.s.controller.AuthController - Login successful for user: raj
+2026-04-05 17:14:21 INFO  c.e.s.controller.AuthController - Generated token: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTWFuYWdlciIsIm5hbWUiOiJyYWoiLCJ1c2VySWQiOjQsImVtYWlsIjoicmFqQGdtYWlsLmNvbSIsInN1YiI6InJhakBnbWFpbC5jb20iLCJpYXQiOjE3NzUzODk0NjEsImV4cCI6MTc3NTQ3NTg2MX0.8AeNXLGZwoOHsiULAWXsX2n8L_mH7Ty61iL8BA2YuSE
