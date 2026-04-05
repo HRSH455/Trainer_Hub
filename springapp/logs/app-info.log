@@ -56,3 +56,26 @@
 2026-04-05 17:14:21 INFO  c.examly.springapp.config.JwtUtils - token generated
 2026-04-05 17:14:21 INFO  c.e.s.controller.AuthController - Login successful for user: raj
 2026-04-05 17:14:21 INFO  c.e.s.controller.AuthController - Generated token: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTWFuYWdlciIsIm5hbWUiOiJyYWoiLCJ1c2VySWQiOjQsImVtYWlsIjoicmFqQGdtYWlsLmNvbSIsInN1YiI6InJhakBnbWFpbC5jb20iLCJpYXQiOjE3NzUzODk0NjEsImV4cCI6MTc3NTQ3NTg2MX0.8AeNXLGZwoOHsiULAWXsX2n8L_mH7Ty61iL8BA2YuSE
+2026-04-05 19:50:09 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:50:09 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:50:11 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 3.072 seconds (process running for 10079.285)
+2026-04-05 19:50:13 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:50:13 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:50:15 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.596 seconds (process running for 10082.588)
+2026-04-05 19:50:30 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:50:30 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:50:32 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.213 seconds (process running for 10099.382)
+2026-04-05 19:51:25 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:51:25 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:51:27 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.242 seconds (process running for 10154.543)
+2026-04-05 19:51:45 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:51:45 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:51:46 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.205 seconds (process running for 10173.734)
+2026-04-05 19:51:49 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:51:49 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:51:50 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.435 seconds (process running for 10177.955)
+2026-04-05 19:52:47 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:52:47 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 19:52:48 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.808 seconds (process running for 10236.126)
+2026-04-05 19:52:50 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 19:52:50 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"

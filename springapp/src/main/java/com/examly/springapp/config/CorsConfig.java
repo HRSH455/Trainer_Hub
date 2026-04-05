@@ -12,7 +12,8 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:4200");  
+        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedOrigin("https://your-app.vercel.app"); 
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
         config.setAllowCredentials(true);
