@@ -11,69 +11,70 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
   animations: [slideInOutAnimation],
-    host: { '[@slideInOut]': '' }
+  host: { '[@slideInOut]': '' }
 })
-export class SignupComponent implements OnInit{
+export class SignupComponent implements OnInit {
 
-  signupForm!:FormGroup;
+  signupForm!: FormGroup;
 
-  constructor(private fb:FormBuilder,private authService:AuthService,private router:Router,private snackBar:MatSnackBar)
-  {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
-  }
-
-
-  passwordMismatch(group:AbstractControl):ValidationErrors | null
-  {
-    const password=group.get('password')?.value;
-    const confirmPassword=group.get('confirmPassword')?.value;
-    return password == confirmPassword ? null : {passwordMismatch:true};
+  passwordMismatch(group: AbstractControl): ValidationErrors | null {
+    const password = group.get('password')?.value;
+    const confirmPassword = group.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
   ngOnInit(): void {
-
-    this.signupForm=this.fb.group({
-      username:['',[Validators.required]],
-      email:['',[Validators.required,Validators.email]],
-      mobileNumber:['',[Validators.required]],
-      password:['',[Validators.required]],
-      confirmPassword:['',[Validators.required]],
-      userRole:['',[Validators.required]]
-    },{validators:this.passwordMismatch})
-    
+    this.signupForm = this.fb.group({
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],  // ← added pattern
+      password: ['', [Validators.required, Validators.minLength(6)]],                // ← added minLength
+      confirmPassword: ['', [Validators.required]],
+      userRole: ['', [Validators.required]]
+    }, { validators: this.passwordMismatch });
   }
 
-  onSubmit()
-  {
-    if(this.signupForm.valid)
-    {
+  //  Helper
+  isInvalid(field: string): boolean {
+    const control = this.signupForm.get(field);
+    return !!(control && control.invalid && (control.dirty || control.touched));
+  }
+
+  isValid(field: string): boolean {
+    const control = this.signupForm.get(field);
+    return !!(control && control.valid && (control.dirty || control.touched));
+  }
+  
+
+  onSubmit() {
+    this.signupForm.markAllAsTouched(); // ← triggers messages if submitted blank
+
+    if (this.signupForm.valid) {
       this.authService.register(this.signupForm.value).subscribe({
-        next:(response)=>{
-          if(response.success)
-          {
-            console.log(response.data);
-            this.snackBar.open(response.message,'Close',{duration:3000});
+        next: (response) => {
+          if (response.success) {
+            this.snackBar.open(response.message, 'Close', { duration: 3000 });
             this.resetForm();
             this.router.navigate(['/login']);
-
-          }
-          else
-          {
-            this.snackBar.open(response.message,'Close',{duration:3000});
+          } else {
+            this.snackBar.open(response.message, 'Close', { duration: 3000 });
           }
         },
-        error:(error:HttpErrorResponse)=>
-        {
-          this.snackBar.open(error.message,'Close',{duration:3000});
+        error: (error: HttpErrorResponse) => {
+          this.snackBar.open(error.message, 'Close', { duration: 3000 });
         }
-      })
-
+      });
     }
   }
 
-  resetForm()
-  {
+  resetForm() {
     this.signupForm.reset();
   }
-
 }

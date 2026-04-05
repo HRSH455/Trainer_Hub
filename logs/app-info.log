@@ -1,0 +1,12 @@
+2025-11-30 17:55:31 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 21148 (C:\Users\bommi\Desktop\New folder\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\New folder\TrainerHub)
+2025-11-30 17:55:31 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-30 17:59:45 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 12392 (C:\Users\bommi\Desktop\New folder\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\New folder\TrainerHub)
+2025-11-30 17:59:45 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-30 17:59:51 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 6.71 seconds (process running for 7.287)
+2025-11-30 18:46:12 INFO  c.e.s.controller.AuthController - Received registration request for user: bommiharsha7@gmail.com
+2025-11-30 18:46:13 INFO  c.e.s.controller.AuthController - User registered successfully: bommiharsha7@gmail.com
+2025-11-30 18:46:13 INFO  c.e.s.controller.AuthController - User details: ID=1, Username=harsha, Email=bommiharsha7@gmail.com, Mobile=7008443267
+2025-11-30 18:46:31 INFO  c.e.s.controller.AuthController - Login attempt for user: bommiharsha7@gmail.com
+2025-11-30 18:46:31 INFO  c.examly.springapp.config.JwtUtils - token generated
+2025-11-30 18:46:32 INFO  c.e.s.controller.AuthController - Login successful for user: harsha
+2025-11-30 18:46:32 INFO  c.e.s.controller.AuthController - Generated token: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTWFuYWdlciIsIm5hbWUiOiJoYXJzaGEiLCJ1c2VySWQiOjEsImVtYWlsIjoiYm9tbWloYXJzaGE3QGdtYWlsLmNvbSIsInN1YiI6ImJvbW1paGFyc2hhN0BnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MDg1OTEsImV4cCI6MTc2NDU5NDk5MX0.EgfU-p4wcarCunf4c8BOknkDoWnGF6OfnLR5-JB4300

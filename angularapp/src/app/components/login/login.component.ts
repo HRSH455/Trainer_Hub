@@ -31,9 +31,22 @@ export class LoginComponent implements OnInit{
     
   }
 
+
+  isInvalid(field: string): boolean {
+    const control = this.loginForm.get(field);
+    return !!(control && control.invalid && (control.dirty || control.touched));
+  }
+
+  isValid(field: string): boolean {
+    const control = this.loginForm.get(field);
+    return !!(control && control.valid && (control.dirty || control.touched));
+  }
+
   onSubmit()
   {
 
+    this.loginForm.markAllAsTouched();
+    
     console.log('form submitted');
     if(this.loginForm.valid)
     {

@@ -2,30 +2,46 @@
   <!-- Left Panel -->
   <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center text-white"
        style="background-image: url('assets/login.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-    <!-- <h1 class="hero-title">TrainerHub</h1> -->
   </div>
 
   <!-- Right Panel -->
   <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
-    <form class="p-4 border rounded bg-white shadow w-100" style="max-width: 350px;" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form class="p-4 border rounded bg-white shadow w-100" style="max-width: 350px;" 
+          [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <h2 class="text-center mb-4">Login</h2>
 
+      <!-- Email -->
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input formControlName="email" type="email" id="email" class="form-control" placeholder="Enter your email">
+        <input formControlName="email" type="email" id="email" 
+               class="form-control"
+               [class.is-invalid]="isInvalid('email')"
+               [class.is-valid]="isValid('email')"
+               placeholder="Enter your email">
+        <div class="invalid-feedback" *ngIf="isInvalid('email')">
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email address.</span>
+        </div>
       </div>
 
+      <!-- Password -->
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input formControlName="password" type="password" id="password" class="form-control" placeholder="Enter your password">
+        <input formControlName="password" type="password" id="password"
+               class="form-control"
+               [class.is-invalid]="isInvalid('password')"
+               [class.is-valid]="isValid('password')"
+               placeholder="Enter your password">
+        <div class="invalid-feedback" *ngIf="isInvalid('password')">
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</span>
+        </div>
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Login</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Login</button>
 
       <p class="text-center mt-3">
         Don't have an account? <a routerLink="/signup">Signup</a>
       </p>
-
       <p class="text-center mt-3">
         <a routerLink="/forgot-password">Forgot password?</a>
       </p>

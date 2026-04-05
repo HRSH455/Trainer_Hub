@@ -11,41 +11,95 @@
           [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <h2 class="text-center mb-4">Sign Up</h2>
 
+      <!-- Username -->
       <div class="mb-2">
         <label for="username" class="form-label">Username</label>
-        <input formControlName="username" type="text" id="username" class="form-control" placeholder="Enter your name">
+        <input formControlName="username" type="text" id="username"
+               class="form-control"
+               [class.is-invalid]="isInvalid('username')"
+               [class.is-valid]="isValid('username')"
+               placeholder="Enter your name">
+        <div class="invalid-feedback" *ngIf="isInvalid('username')">
+          <span *ngIf="signupForm.get('username')?.errors?.['required']">Username is required.</span>
+        </div>
       </div>
 
+      <!-- Email -->
       <div class="mb-2">
         <label for="email" class="form-label">Email</label>
-        <input formControlName="email" type="email" id="email" class="form-control" placeholder="Enter your email">
+        <input formControlName="email" type="email" id="email"
+               class="form-control"
+               [class.is-invalid]="isInvalid('email')"
+               [class.is-valid]="isValid('email')"
+               placeholder="Enter your email">
+        <div class="invalid-feedback" *ngIf="isInvalid('email')">
+          <span *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</span>
+          <span *ngIf="signupForm.get('email')?.errors?.['email']">Enter a valid email address.</span>
+        </div>
       </div>
 
+      <!-- Mobile -->
       <div class="mb-2">
         <label for="mobile" class="form-label">Mobile</label>
-        <input formControlName="mobileNumber" type="text" id="mobile" class="form-control" placeholder="Enter your mobile number">
+        <input formControlName="mobileNumber" type="text" id="mobile"
+               class="form-control"
+               [class.is-invalid]="isInvalid('mobileNumber')"
+               [class.is-valid]="isValid('mobileNumber')"
+               placeholder="Enter your mobile number">
+        <div class="invalid-feedback" *ngIf="isInvalid('mobileNumber')">
+          <span *ngIf="signupForm.get('mobileNumber')?.errors?.['required']">Mobile number is required.</span>
+          <span *ngIf="signupForm.get('mobileNumber')?.errors?.['pattern']">Enter a valid 10-digit mobile number.</span>
+        </div>
       </div>
 
+      <!-- Password -->
       <div class="mb-2">
         <label for="password" class="form-label">Password</label>
-        <input formControlName="password" type="password" id="password" class="form-control" placeholder="Create a password">
+        <input formControlName="password" type="password" id="password"
+               class="form-control"
+               [class.is-invalid]="isInvalid('password')"
+               [class.is-valid]="isValid('password')"
+               placeholder="Create a password">
+        <div class="invalid-feedback" *ngIf="isInvalid('password')">
+          <span *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</span>
+          <span *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</span>
+        </div>
       </div>
 
+      <!-- Confirm Password -->
       <div class="mb-2">
         <label for="confirmPassword" class="form-label">Confirm Password</label>
-        <input formControlName="confirmPassword" type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password">
+        <input formControlName="confirmPassword" type="password" id="confirmPassword"
+               class="form-control"
+               [class.is-invalid]="isInvalid('confirmPassword') || (signupForm.errors?.['passwordMismatch'] && signupForm.get('confirmPassword')?.touched)"
+               [class.is-valid]="isValid('confirmPassword') && !signupForm.errors?.['passwordMismatch']"
+               placeholder="Confirm your password">
+        <div class="invalid-feedback"
+             *ngIf="isInvalid('confirmPassword') || (signupForm.errors?.['passwordMismatch'] && signupForm.get('confirmPassword')?.touched)">
+          <span *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Please confirm your password.</span>
+          <span *ngIf="!signupForm.get('confirmPassword')?.errors?.['required'] && signupForm.errors?.['passwordMismatch']">
+            Passwords do not match.
+          </span>
+        </div>
       </div>
 
+      <!-- Role -->
       <div class="mb-3">
         <label for="role" class="form-label">Select Role</label>
-        <select formControlName="userRole" id="role" class="form-select">
+        <select formControlName="userRole" id="role"
+                class="form-select"
+                [class.is-invalid]="isInvalid('userRole')"
+                [class.is-valid]="isValid('userRole')">
           <option value="" disabled selected>Select your role</option>
           <option value="Manager">Manager</option>
           <option value="Coordinator">Co-ordinator</option>
         </select>
+        <div class="invalid-feedback" *ngIf="isInvalid('userRole')">
+          <span *ngIf="signupForm.get('userRole')?.errors?.['required']">Please select a role.</span>
+        </div>
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Signup</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="signupForm.invalid">Signup</button>
 
       <p class="text-center mt-2 mb-0">
         Already have an account? <a routerLink="/login">Login</a>
