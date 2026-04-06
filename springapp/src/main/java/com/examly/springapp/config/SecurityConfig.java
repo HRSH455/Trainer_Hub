@@ -35,15 +35,17 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
-            .cors(cors -> cors.configurationSource(corsConfig.corsConfigurationSource()))  // ← CHANGED
+            .cors(cors -> cors.configurationSource(corsConfig.corsConfigurationSource()))  
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()                    // ← ADDED
+                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()                    
                 .requestMatchers(
                     "/api/login",
                     "/api/register",
                     "/api/test/login",
-                    "/api/forgot-password",                                                // ← ADDED
-                    "/api/reset-password",                                                 // ← ADDED
+                    "/api/forgot-password",                                                
+                    "/api/reset-password", 
+                    "/api/email/send-otp",        
+                    "/api/email/verify-otp",                                                
                     "/v3/api-docs/**",
                     "/swagger-ui/**",
                     "/swagger-ui.html"

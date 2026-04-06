@@ -87,3 +87,68 @@
 2026-04-05 20:17:47 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
 2026-04-05 20:17:47 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
 2026-04-05 20:17:49 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 2.226 seconds (process running for 11737.264)
+2026-04-05 20:43:07 INFO  c.e.s.controller.AuthController - Received registration request for user: jar@gmail.com
+2026-04-05 20:43:07 INFO  c.e.s.controller.AuthController - User registered successfully: jar@gmail.com
+2026-04-05 20:43:07 INFO  c.e.s.controller.AuthController - User details: ID=1, Username=jar, Email=jar@gmail.com, Mobile=0987654321
+2026-04-05 20:43:24 INFO  c.e.s.controller.AuthController - Login attempt for user: jar@gmail.com
+2026-04-05 20:43:24 INFO  c.examly.springapp.config.JwtUtils - token generated
+2026-04-05 20:43:24 INFO  c.e.s.controller.AuthController - Login successful for user: jar
+2026-04-05 20:43:24 INFO  c.e.s.controller.AuthController - Generated token: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ29vcmRpbmF0b3IiLCJuYW1lIjoiamFyIiwidXNlcklkIjoxLCJlbWFpbCI6ImphckBnbWFpbC5jb20iLCJzdWIiOiJqYXJAZ21haWwuY29tIiwiaWF0IjoxNzc1NDAyMDA0LCJleHAiOjE3NzU0ODg0MDR9.5sjLS61x2kICvq13u0MGv44JqDI2aEbaGAiUjfoeGPw
+2026-04-05 20:43:29 INFO  c.e.s.controller.AuthController - Request to get all users
+2026-04-05 20:43:29 INFO  c.e.s.controller.FeedbackController - Fetching feedbacks for page: 0 and size: 10
+2026-04-05 20:43:29 INFO  c.e.s.controller.AuthController - Total users retrieved: 1
+2026-04-05 20:43:29 INFO  c.e.s.controller.FeedbackController - Fetched feedbacks: Page 1 of 0 containing UNKNOWN instances
+2026-04-05 20:44:48 INFO  c.e.s.controller.TrainerController - Received request to add trainer: Trainer(trainerId=null, name=fdf, email=daniolmo@gmail.com, phone=6534565432, expertise=skill, experience=2, certification=aws, resume=, joiningDate=2026-04-01, status=Active, feedbacks=[], requirements=[])
+2026-04-05 20:44:48 INFO  c.e.s.controller.TrainerController - Trainer added successfully: Trainer(trainerId=1, name=fdf, email=daniolmo@gmail.com, phone=6534565432, expertise=skill, experience=2, certification=aws, resume=, joiningDate=2026-04-01, status=Active, feedbacks=[], requirements=[])
+2026-04-05 20:44:48 INFO  c.e.s.controller.TrainerController - Fetching trainers for page: 0 and size: 10
+2026-04-05 20:44:49 INFO  c.e.s.controller.TrainerController - Trainers fetched successfully for page: 0 and size: 10
+2026-04-05 20:44:55 INFO  c.e.s.controller.AuthController - Request to get all users
+2026-04-05 20:44:55 INFO  c.e.s.controller.AuthController - Total users retrieved: 1
+2026-04-05 20:44:55 INFO  c.e.s.controller.FeedbackController - Fetching feedbacks for page: 0 and size: 10
+2026-04-05 20:44:55 INFO  c.e.s.controller.FeedbackController - Fetched feedbacks: Page 1 of 0 containing UNKNOWN instances
+2026-04-05 20:45:03 INFO  c.e.s.controller.TrainerController - Request to get all trainers
+2026-04-05 20:45:03 INFO  c.e.s.controller.TrainerController - Fetching all trainers from the database
+2026-04-05 20:45:03 INFO  c.e.s.controller.TrainerController - Total trainers retrieved: 1
+2026-04-05 20:45:03 INFO  c.e.s.c.RequirementController - Fetching requirements for page: 0, size: 10
+2026-04-05 20:45:09 INFO  c.e.s.controller.TrainerController - Fetching trainers for page: 0 and size: 10
+2026-04-05 20:45:09 INFO  c.e.s.controller.TrainerController - Trainers fetched successfully for page: 0 and size: 10
+2026-04-05 20:45:50 INFO  c.e.s.controller.AuthController - Request to get all users
+2026-04-05 20:45:50 INFO  c.e.s.controller.FeedbackController - Fetching feedbacks for page: 0 and size: 10
+2026-04-05 20:45:50 INFO  c.e.s.controller.AuthController - Total users retrieved: 1
+2026-04-05 20:45:50 INFO  c.e.s.controller.FeedbackController - Fetched feedbacks: Page 1 of 0 containing UNKNOWN instances
+2026-04-05 20:46:02 INFO  c.e.s.controller.TrainerController - Fetching trainers for page: 0 and size: 10
+2026-04-05 20:46:02 INFO  c.e.s.controller.TrainerController - Trainers fetched successfully for page: 0 and size: 10
+2026-04-05 20:46:30 INFO  c.e.s.controller.AuthController - Login attempt for user: raj@gmail.com
+2026-04-05 20:46:45 INFO  c.e.s.controller.AuthController - Login attempt for user: raj@gmail.com
+2026-04-05 20:46:55 INFO  c.e.s.controller.AuthController - Login attempt for user: raj@gmail.com
+2026-04-05 20:51:24 INFO  c.e.s.controller.AuthController - Login attempt for user: raj@gmail.com
+2026-04-05 20:51:34 INFO  c.e.s.controller.AuthController - Login attempt for user: raj@gmail.com
+2026-04-05 20:56:18 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:18 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:21 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 3.327 seconds (process running for 14048.708)
+2026-04-05 20:56:22 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:22 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:24 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.636 seconds (process running for 14051.918)
+2026-04-05 20:56:31 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:31 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:33 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.676 seconds (process running for 14060.488)
+2026-04-05 20:56:34 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:34 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:36 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.619 seconds (process running for 14063.717)
+2026-04-05 20:56:38 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:38 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:39 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.594 seconds (process running for 14067.007)
+2026-04-05 20:56:42 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:42 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:43 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.455 seconds (process running for 14071.033)
+2026-04-05 20:56:46 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:46 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:48 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.176 seconds (process running for 14075.391)
+2026-04-05 20:56:51 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:51 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:53 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.681 seconds (process running for 14080.833)
+2026-04-05 20:56:55 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:55 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-05 20:56:56 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.758 seconds (process running for 14084.204)
+2026-04-05 20:56:58 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 27428 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
+2026-04-05 20:56:58 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"

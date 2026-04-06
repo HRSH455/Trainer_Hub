@@ -4,13 +4,13 @@ import { User } from '../models/user.model';
 import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 import { Login } from '../models/login.model';
 import { ApiResponse } from '../models/apiResponse.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  public apiUrl: string = 'http://localhost:8080/api';
+  private baseUrl = environment.apiUrl; 
 
   private loggedInUserSubject = new BehaviorSubject<any>(null);
   loggedInUser$ = this.loggedInUserSubject.asObservable();
@@ -36,7 +36,7 @@ export class AuthService {
 
   //  User Info API
   getUserById(userId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/user/${userId}`);
+    return this.http.get(`${this.baseUrl}/user/${userId}`);
   }
 
   //  Token Utilities
@@ -97,7 +97,7 @@ export class AuthService {
 
   //  Auth API Calls
   register(user: User): Observable<ApiResponse<User>> {
-    return this.http.post<ApiResponse<User>>(`${this.apiUrl}/register`, user).pipe(
+    return this.http.post<ApiResponse<User>>(`${this.baseUrl}/register`, user).pipe(
       catchError((error:HttpErrorResponse)=>{
         return throwError(()=>error)
       })
@@ -107,7 +107,7 @@ export class AuthService {
   login(login: Login): Observable<ApiResponse<User>> {
     console.log('in auth service');
     
-    return this.http.post<ApiResponse<User>>(`${this.apiUrl}/login`, login).pipe(
+    return this.http.post<ApiResponse<User>>(`${this.baseUrl}/login`, login).pipe(
       catchError((error:HttpErrorResponse)=>
       {
         return throwError(()=>error)
@@ -119,24 +119,24 @@ export class AuthService {
 
   getAllUsers():Observable<any>
   {
-    return this.http.get<any>(`${this.apiUrl}/users`);
+    return this.http.get<any>(`${this.baseUrl}/users`);
   }
 
   sendOtp(email:string):Observable<any>
   {
-    return this.http.post(`${this.apiUrl}/email/send-otp?email=${email}`,null);
+    return this.http.post(`${this.baseUrl}/email/send-otp?email=${email}`,null);
   }
 
   verifyOtp( { email, otpInput }:any):Observable<any>
   {
-    return this.http.post(`${this.apiUrl}/email/verify-otp`,{email,otpInput});
+    return this.http.post(`${this.baseUrl}/email/verify-otp`,{email,otpInput});
   }
 
 
   resetPassword({email,newPassword,confirmPassword}:any):Observable<ApiResponse<null>>
   {
     console.log({email,newPassword,confirmPassword});
-    return this.http.put<ApiResponse<null>>(`${this.apiUrl}/email/reset-password`,{email,newPassword,confirmPassword}).pipe(
+    return this.http.put<ApiResponse<null>>(`${this.baseUrl}/email/reset-password`,{email,newPassword,confirmPassword}).pipe(
       catchError((error:HttpErrorResponse)=>
       {
         return throwError(()=>error);
