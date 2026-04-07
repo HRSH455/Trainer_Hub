@@ -5,23 +5,34 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.crypto.SecretKey;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 
 @Component
 public class JwtUtils {
 
+    @Value("${jwt.secret}")
+    private String jwtSecret;
+
     private static final Logger logger=LoggerFactory.getLogger(JwtUtils.class);
 
-
-    public static final String jwtSecret = "11f415e363c707e46d02875eff0870cc";
     public static final String JWT_HEADER = "Authorization";
     private final int jwtExpirationMs = 86400000;
-    Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
+
+    private SecretKey key;
+
+    @PostConstruct
+    public void init() {
+        this.key = Keys.hmacShaKeyFor(jwtSecret.getBytes()); 
+    }
 
     
 
