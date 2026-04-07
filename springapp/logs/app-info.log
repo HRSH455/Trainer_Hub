@@ -158,3 +158,4 @@
 2026-04-07 00:00:41 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 6.438 seconds (process running for 7.048)
 2026-04-07 00:02:35 INFO  c.e.springapp.SpringappApplication - Starting SpringappApplication using Java 21.0.9 with PID 26248 (C:\Users\bommi\Desktop\work\TrainerHub\springapp\target\classes started by bommi in C:\Users\bommi\Desktop\work\TrainerHub\springapp)
 2026-04-07 00:02:35 INFO  c.e.springapp.SpringappApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-07 00:02:37 INFO  c.e.springapp.SpringappApplication - Started SpringappApplication in 1.685 seconds (process running for 123.212)
