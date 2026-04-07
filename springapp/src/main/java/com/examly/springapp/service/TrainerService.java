@@ -7,23 +7,24 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.Trainer;
+import com.examly.springapp.model.TrainerResponseDto;
 
 @Service
 public interface TrainerService {
 
-    Trainer addTrainer(Trainer trainer);
+    TrainerResponseDto addTrainer(Trainer trainer);
 
-    Optional<Trainer> getTrainerById(Long trainerId);
+    Optional<TrainerResponseDto> getTrainerById(Long trainerId);
 
-    List<Trainer> getAllTrainers();
+    List<TrainerResponseDto> getAllTrainers();
 
-    Trainer updateTrainer(Long trainerId,Trainer trainer);
+    TrainerResponseDto updateTrainer(Long trainerId,Trainer trainer);
 
-    Trainer deleteTrainer(Long trainerId);
+    TrainerResponseDto deleteTrainer(Long trainerId);
 
     //pagination
 
-    Page<Trainer> getTrainersByPage(int page,int size);
+    Page<TrainerResponseDto> getTrainersByPage(int page,int size);
 
     void addBulkTrainers(List<Trainer> trainers);
 

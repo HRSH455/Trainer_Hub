@@ -15,64 +15,69 @@ import com.examly.springapp.exceptions.TrainerDeletionException;
 import com.examly.springapp.exceptions.TrainerNotFoundException;
 import com.examly.springapp.model.Requirement;
 import com.examly.springapp.model.Trainer;
+import com.examly.springapp.model.TrainerResponseDto;
 import com.examly.springapp.repository.RequirementRepository;
 import com.examly.springapp.repository.TrainerRepository;
 
-
 @Service
-public class TrainerServiceImpl implements TrainerService{
+public class TrainerServiceImpl implements TrainerService {
 
-    private static final Logger logger=LoggerFactory.getLogger(TrainerServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(TrainerServiceImpl.class);
 
     private TrainerRepository trainerRepo;
-
     private RequirementRepository requirementRepository;
 
-
-    public TrainerServiceImpl(TrainerRepository trainerRepo,RequirementRepository requirementRepository) {
+    public TrainerServiceImpl(TrainerRepository trainerRepo, RequirementRepository requirementRepository) {
         this.trainerRepo = trainerRepo;
-        this.requirementRepository=requirementRepository;
+        this.requirementRepository = requirementRepository;
     }
 
-   
+    private TrainerResponseDto mapToDto(Trainer trainer) {
+        return new TrainerResponseDto(
+            trainer.getTrainerId(),
+            trainer.getName(),
+            trainer.getEmail(),
+            trainer.getPhone(),
+            trainer.getExpertise(),
+            trainer.getExperience(),
+            trainer.getCertification(),
+            trainer.getResume(),
+            trainer.getJoiningDate(),
+            trainer.getStatus()
+        );
+    }
 
     @Override
-    public Trainer addTrainer(Trainer trainer) {
-
-        List<Trainer>trainersWithEmailId=trainerRepo.findByEmail(trainer.getEmail());
-        if(!trainersWithEmailId.isEmpty()){
-            throw new DuplicateTrainerException("Trainer Already Exists with this email: "+trainer.getEmail());
+    public TrainerResponseDto addTrainer(Trainer trainer) {
+        List<Trainer> trainersWithEmailId = trainerRepo.findByEmail(trainer.getEmail());
+        if (!trainersWithEmailId.isEmpty()) {
+            throw new DuplicateTrainerException("Trainer Already Exists with this email: " + trainer.getEmail());
         }
-        return trainerRepo.save(trainer);
+        Trainer savedTrainer = trainerRepo.save(trainer);
+        return mapToDto(savedTrainer);
     }
 
     @Override
-    public Optional<Trainer> getTrainerById(Long trainerId) {
-        Optional<Trainer>trainersById=trainerRepo.findById(trainerId);
+    public Optional<TrainerResponseDto> getTrainerById(Long trainerId) {
+        Trainer trainer = trainerRepo.findById(trainerId)
+            .orElseThrow(() -> new TrainerNotFoundException("No Trainer Found with the Trainer ID: " + trainerId));
 
-        if(trainersById.isEmpty())
-        {
-            throw new TrainerNotFoundException("No Trainer Found with the Trainer ID: "+trainerId);
-        }
-        return trainersById;
-
+        return Optional.of(mapToDto(trainer));
     }
 
     @Override
-    public List<Trainer> getAllTrainers() {
-        List<Trainer>trainers= trainerRepo.findAll();
-        return trainers;
+    public List<TrainerResponseDto> getAllTrainers() {
+        List<Trainer> trainers = trainerRepo.findAll();
+        return trainers.stream().map(this::mapToDto).toList();
     }
 
     @Override
-    public Trainer updateTrainer(Long trainerId, Trainer trainer) {
-        Trainer existingTrainer=trainerRepo.findById(trainerId).orElse(null);
-        if(existingTrainer==null){
-            
-            throw new TrainerNotFoundException("No Trainer Found with the Trainer ID: "+trainerId);
-        }
-        else{
+    public TrainerResponseDto updateTrainer(Long trainerId, Trainer trainer) {
+        Trainer existingTrainer = trainerRepo.findById(trainerId).orElse(null);
 
+        if (existingTrainer == null) {
+            throw new TrainerNotFoundException("No Trainer Found with the Trainer ID: " + trainerId);
+        } else {
             existingTrainer.setCertification(trainer.getCertification());
             existingTrainer.setEmail(trainer.getEmail());
             existingTrainer.setExperience(trainer.getExperience());
@@ -82,61 +87,46 @@ public class TrainerServiceImpl implements TrainerService{
             existingTrainer.setPhone(trainer.getPhone());
             existingTrainer.setResume(trainer.getResume());
             existingTrainer.setStatus(trainer.getStatus());
-
         }
-        return trainerRepo.save(existingTrainer);
 
+        Trainer updatedTrainer = trainerRepo.save(existingTrainer);
+        return mapToDto(updatedTrainer);
     }
 
     @Override
-    public Trainer deleteTrainer(Long trainerId) {
-        Trainer existingTrainer=trainerRepo.findById(trainerId).orElse(null);
-        if(existingTrainer==null)
-        {
+    public TrainerResponseDto deleteTrainer(Long trainerId) {
+        Trainer existingTrainer = trainerRepo.findById(trainerId).orElse(null);
+
+        if (existingTrainer == null) {
             throw new TrainerDeletionException("Failed to delete trainer with ID: " + trainerId);
         }
-        if(existingTrainer.getRequirements().isEmpty())
-        {
+
+        if (existingTrainer.getRequirements().isEmpty()) {
             trainerRepo.delete(existingTrainer);
-            
-        }
-        else
-        {
-            for(Requirement req: existingTrainer.getRequirements())
-            {   
+        } else {
+            for (Requirement req : existingTrainer.getRequirements()) {
                 req.setStatus("Open");
                 req.setTrainer(null);
                 requirementRepository.save(req);
-                
             }
             trainerRepo.save(existingTrainer);
             trainerRepo.delete(existingTrainer);
         }
-        
-        return existingTrainer;
-        
-        
-        
+
+        return mapToDto(existingTrainer);
     }
 
     @Override
-    public Page<Trainer> getTrainersByPage(int page, int size) {
-        
-        Pageable pageable=PageRequest.of(page, size);
-        return trainerRepo.findAll(pageable);
-
+    public Page<TrainerResponseDto> getTrainersByPage(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Trainer> trainerPage = trainerRepo.findAll(pageable);
+        return trainerPage.map(this::mapToDto);
     }
-
-
 
     @Override
     public void addBulkTrainers(List<Trainer> trainers) {
-
         logger.info("adding bulk trainers");
         trainerRepo.saveAll(trainers);
         logger.info("all trainers saved successfully");
-        
     }
-
-    
 }
