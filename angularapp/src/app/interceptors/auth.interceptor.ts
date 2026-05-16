@@ -31,8 +31,8 @@ export class AuthInterceptor implements HttpInterceptor {
       const token=JSON.parse(sessionStorage.getItem('LogggedInUser')!).token;
       console.log(token);
       const modifiedRequest=request.clone({setHeaders:{Authorization: `Bearer ${token}`}});
-      console.log(JSON.stringify(modifiedRequest));
-      console.log(`Bearer `+token);
+      //console.log(JSON.stringify(modifiedRequest));
+      //console.log(`Bearer `+token);
       return next.handle(modifiedRequest);       
     }
    
